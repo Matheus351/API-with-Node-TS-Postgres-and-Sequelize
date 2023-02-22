@@ -1,2 +1,2 @@
 # API-with-Node-TS-Postgres-and-Sequelize
-Api with node js, typescript, jwt authentication, sequelize and Postgres. Including automated tests.
+Api with Node js, Typescript, JWT authentication, Sequelize and Postgres. Including automated tests.
