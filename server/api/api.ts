@@ -4,11 +4,9 @@ import bodyParser from 'body-parser';
 
 import Routes from './routes/routes';
 
-
 class Api {
 
     public express: Application;
-
 
     constructor() {
         this.express = express();
