@@ -15,7 +15,6 @@ class User implements IUser {
 
     constructor() { }
 
-
     create(user: any) {
         return db.User.create(user);
     }

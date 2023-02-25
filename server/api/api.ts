@@ -11,7 +11,7 @@ class Api {
 
     constructor() {
         this.express = express();
-        this.router(this.express);
+        this.middleware();
     }
 
     middleware(): void {
@@ -19,6 +19,7 @@ class Api {
         this.express.use(bodyParser.urlencoded({ extended: true }));
         this.express.use(bodyParser.json());
         this.express.use(errorHandlerApi);
+        this.router(this.express);
     }
 
     private router(express: Application): void {

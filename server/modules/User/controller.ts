@@ -10,36 +10,37 @@ class UserController{
         this.UserService = new User();
     }
 
-    async getAll(req:Request, res:Response){
-        await this.UserService.getAllUsers()
+     getAll(req:Request, res:Response){
+         this.UserService.getAllUsers()
          .then(data => {
             res.status(200).json({payload:data});
         })
-        .catch(e=>{ res.status(500).json({payload:'Erro ao buscar usuarios'})  });
+        .catch(e=>{ res.status(500).json({payload:'Error to find users'})  });
     }
 
 
     createUser(req:Request, res:Response){
+       
          this.UserService.create(req.body)
         .then((data: any)=>{
             res.status(200).json({payload:data});
         })
-        .catch((e: any)=>{ res.status(500).json({payload:'Erro ao criar um usuario'})  });
+        .catch((e: any)=>{ res.status(500).json({payload:'Error to create user'})  });
     }
 
-    async getById(req:Request, res:Response){
-       
+     getById(req:Request, res:Response){
+        
         const userId = parseInt(req.params.id);
 
-        await this.UserService.getUserById(userId)
+         this.UserService.getUserById(userId)
         .then(data=>{
             res.status(200).json({payload:data});
         })
-        .catch(e=>{ res.status(500).json({payload:'Erro ao buscar usuario'})  });
+        .catch(e=>{ res.status(500).json({payload:'Error to fin user'})  });
     }
 
     updateUser(req:Request, res:Response){
-        
+      
         const userId = parseInt(req.params.id);
         const props = req.body;
 
@@ -48,7 +49,7 @@ class UserController{
             res.status(200).json({payload:data});
         })
         .catch((e: any)=>{
-            res.status(500).json({payload:'Erro ao atualizar usuario'});
+            res.status(500).json({payload:'Error to update user'});
         }) ;
     }
 
@@ -58,7 +59,7 @@ class UserController{
         .then((data: any)=>{
             res.status(200).json({payload:data});
         })
-        .catch((e: any)=>res.status(500).json({payload:'Erro ao deletar usuario'}));
+        .catch((e: any)=>res.status(500).json({payload:'Error to delete user'}));
     }
 }
 
